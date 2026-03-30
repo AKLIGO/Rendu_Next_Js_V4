@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import { ClientComponentTwo } from "./client-component-two";
+import { ServerComponentOne } from "./server-component-one";
 
-export const ClientComponentOne = () => {
+export const ClientComponentOne = ({children}:{children:React.ReactNode}) => {
     const [name, setName] = useState("Superman");
     console.log("Client Component One rendered");
     return ( <>
         <ClientComponentTwo />
         <div>Client Component One: {name}</div>
+        {/* <ServerComponentOne /> */}
+        {children}
     </>
     );
 }
