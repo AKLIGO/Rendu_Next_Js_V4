@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/components/theme-provider";
+import { clientSideFunction } from "@/utils/client-utils";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -18,11 +19,12 @@ export default function ClientRoutePage() {
         // dots: true,
         // };
     const result = serverSideFunction();
-    console.log(result);
+    const clientResult = clientSideFunction();
+    console.log(result, clientResult);
     return (
         <>
             <h1 style={{ color: theme?.colors?.secondary || "#1c1c1e" }}>
-                Client Route page {result}
+                Client Route page {result} - {clientResult}
             </h1>
         </>
     );
